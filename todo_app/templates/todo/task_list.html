@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To-Do List</title>
+</head>
+<body>
+    <h1>My To-Do List</h1>
+
+    {% if tasks %}
+        <ul>
+            {% for task in tasks %}
+                <li>
+                    {{ task.title }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No tasks available.</p>
+    {% endif %}
+</body>
+</html>
