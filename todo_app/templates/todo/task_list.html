@@ -17,6 +17,7 @@
             {% for task in tasks %}
                 <li>
                     {{ task.title }}
+                     <a href="{% url 'delete_task' task.id %}">Delete</a>
                 </li>
             {% endfor %}
         </ul>
