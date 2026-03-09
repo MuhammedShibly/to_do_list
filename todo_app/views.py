@@ -15,3 +15,8 @@ def delete_task(request, task_id):
     task = get_object_or_404(Task, id=task_id)
     task.delete()
     return redirect('task_list')
+def toggle_complete(request, task_id):
+    task = Task.objects.get(id=task_id)
+    task.completed = not task.completed
+    task.save()
+    return redirect('task_list')
